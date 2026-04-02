@@ -24,9 +24,11 @@ jobs:
           docker build -t wwm-admin:latest .
           
           docker run -d \
-            --name wwm-admin-service \
-            --restart always \
-            -p ${{ secrets.APP_PORT }}:${{ secrets.APP_PORT }} \
-            -e "APP_PORT=${{ secrets.APP_PORT }}" \
-            -e "SPRING_PROFILES_ACTIVE=prod" \
-            wwm-admin:latest
+          --name wwm-admin-service \
+          --restart always \
+          --network smyli-docker-config_default \
+          -p ${{ secrets.APP_PORT }}:${{ secrets.APP_PORT }} \
+          -e "APP_PORT=${{ secrets.APP_PORT }}" \
+          -e "LOGGING_FILE_NAME=/app/logs/admin.log" \
+          -e "SPRING_PROFILES_ACTIVE=prod" \
+          wwm-admin:latest
