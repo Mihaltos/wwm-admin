@@ -1,0 +1,32 @@
+name: Deploy WWM-Admin App (Docker)
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    runs-on: self-hosted # Твой Mac Mini
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build with Gradle
+        run: |
+          chmod +x gradlew
+          ./gradlew clean bootJar -x test
+
+      - name: Build and Run in Docker
+        run: |
+          docker stop wwm-admin-service || true
+          docker rm wwm-admin-service || true
+          
+          docker build -t wwm-admin:latest .
+          
+          docker run -d \
+            --name wwm-admin-service \
+            --restart always \
+            -p ${{ secrets.APP_PORT }}:${{ secrets.APP_PORT }} \
+            -e "APP_PORT=${{ secrets.APP_PORT }}" \
+            -e "SPRING_PROFILES_ACTIVE=prod" \
+            wwm-admin:latest

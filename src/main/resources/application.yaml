@@ -6,4 +6,4 @@ spring:
     check-template-location: false
 
 server:
-  port: 9090
+  port: ${APP_PORT}
