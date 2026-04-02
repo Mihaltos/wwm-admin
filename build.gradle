@@ -40,5 +40,5 @@ tasks.named('test') {
 }
 
 bootJar {
-    archiveFileName = 'wwm-kafka.jar'
+    archiveFileName = 'wwm-admin.jar'
 }
