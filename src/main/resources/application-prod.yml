@@ -1,0 +1,11 @@
+spring:
+  boot:
+    admin:
+      notify:
+        telegram:
+          enabled: true
+          auth-token: "8557766590:AAGJ_gR19DRpyTOR-q11-5_yM8BNzsef4hU"
+          chat-id: "393589866"
+          # Опционально: можно настроить, на какие статусы реагировать
+          # ignore-changes: "UNKNOWN:UP"
+          message: "*#{instance.registration.name}* (#{instance.id}) is *#{statusInfo.status}*"
