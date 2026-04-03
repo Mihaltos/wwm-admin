@@ -23,10 +23,10 @@ ext {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    implementation 'de.codecentric:spring-boot-admin-starter-server'
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.5.13'
+    implementation 'de.codecentric:spring-boot-admin-starter-server:3.5.8'
     runtimeOnly "io.netty:netty-resolver-dns-native-macos:4.1.100.Final:osx-aarch_64"
-    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.5.13'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
