@@ -6,7 +6,6 @@ import de.codecentric.boot.admin.server.domain.events.InstanceEvent;
 import de.codecentric.boot.admin.server.domain.events.InstanceStatusChangedEvent;
 import de.codecentric.boot.admin.server.notify.AbstractStatusChangeNotifier;
 import org.springframework.stereotype.Component;
-import org.springframework.web.client.RestTemplate;
 import reactor.core.publisher.Mono;
 
 @Component

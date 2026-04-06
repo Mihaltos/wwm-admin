@@ -1,6 +1,6 @@
 plugins {
     id 'java'
-    id 'org.springframework.boot' version '3.5.8'
+    id 'org.springframework.boot' version '3.5.13'
     id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -23,10 +23,10 @@ ext {
 }
 
 dependencies {
-    implementation 'org.springframework.boot:spring-boot-starter-web:3.5.8'
-    implementation 'de.codecentric:spring-boot-admin-starter-server:3.5.8'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'de.codecentric:spring-boot-admin-starter-server'
     runtimeOnly "io.netty:netty-resolver-dns-native-macos:4.1.100.Final:osx-aarch_64"
-    testImplementation 'org.springframework.boot:spring-boot-starter-test:3.5.8'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
